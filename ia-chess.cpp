@@ -1,12 +1,16 @@
-﻿// ia-chess.cpp : définit le point d'entrée de l'application.
-//
-
-#include "ia-chess.h"
+﻿#include "ia-chess.h"
 
 using namespace std;
 
 int main()
 {
-	cout << "Hello CMake." << endl;
+	FrameCapture frameCapture;
+
+	cout << "Welcome to Kempelen" << endl;
+
+	frameCapture.captureFrame();
+
+
+
 	return 0;
 }

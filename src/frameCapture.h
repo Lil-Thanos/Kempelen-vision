@@ -18,8 +18,8 @@ public:
 	~FrameCapture();
 
 
-	bool Initialize(HWND hwnd);
-	void CaptureFrame();
+	bool initialize(HWND hwnd);
+	void captureFrame();
 
 
 };
