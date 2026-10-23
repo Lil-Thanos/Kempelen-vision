@@ -21,7 +21,13 @@ add_executable(ia-chess
     "ia-chess.h"
     "src/frameCapture.h"
     "src/frameCapture.cpp"
- "src/overlay.h" "src/overlay.cpp")
+ "src/overlay.h" "src/overlay.cpp" "src/stockfish.h" "src/stockfish.cpp" "src/fen.h")
+
+ add_custom_command(TARGET ia-chess POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+            ${CMAKE_SOURCE_DIR}/engine
+            $<TARGET_FILE_DIR:ia-chess>/engine
+)
 
 target_link_libraries(ia-chess PRIVATE ${OpenCV_LIBS})
 

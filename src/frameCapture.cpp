@@ -185,8 +185,6 @@ void FrameCapture::findBoard()
 }
 
 
-// ===================== OUT CLASS ================== //
-
 std::optional<cv::Rect>  FrameCapture::detectBoard(const cv::Mat& bgr) {
     cv::Mat gray, edges;
     cv::cvtColor(bgr, gray, cv::COLOR_BGR2GRAY);
