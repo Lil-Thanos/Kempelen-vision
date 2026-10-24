@@ -3,6 +3,7 @@
 
 // grid[ligne][colonne], ligne 0 = haut de l'image.
 // Pièces : "PNBRQK" blancs, "pnbrqk" noirs, '.' = case vide.
+
 inline std::string gridToFen(const char grid[8][8], bool whiteAtBottom, bool whiteToMove)
 {
     std::string fen;
@@ -19,6 +20,6 @@ inline std::string gridToFen(const char grid[8][8], bool whiteAtBottom, bool whi
         if (r < 7) fen += '/';
     }
     fen += whiteToMove ? " w" : " b";
-    fen += " - - 0 1";     // roques et en passant inconnus pour l'instant
+    fen += " - - 0 1";     // roques et en passant inconnus modifier plus tard
     return fen;
 }

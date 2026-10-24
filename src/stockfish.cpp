@@ -76,9 +76,9 @@ bool Stockfish::waitFor(const std::string& token)
     return false;
 }
 
-std::string Stockfish::bestMove(const std::string& topMove, int moveTimeMs)
+std::string Stockfish::bestMove(const std::string& fen, int moveTimeMs)
 {
-    send("position topMove " + topMove);
+    send("position fen " + fen);
     send("go movetime " + std::to_string(moveTimeMs));
 
     std::string line;
@@ -92,4 +92,9 @@ std::string Stockfish::bestMove(const std::string& topMove, int moveTimeMs)
         }
     }
     return "";
+}
+
+bool Stockfish::alive() const
+{
+    return pi_.hProcess && WaitForSingleObject(pi_.hProcess, 0) == WAIT_TIMEOUT;
 }

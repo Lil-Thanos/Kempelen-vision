@@ -21,7 +21,15 @@ add_executable(ia-chess
     "ia-chess.h"
     "src/frameCapture.h"
     "src/frameCapture.cpp"
- "src/overlay.h" "src/overlay.cpp" "src/stockfish.h" "src/stockfish.cpp" "src/fen.h")
+    "src/overlay.h"
+    "src/overlay.cpp"
+    "src/stockfish.h"
+    "src/stockfish.cpp"
+    "src/fen.h"
+    "src/detector.h"
+    "src/detector.cpp"
+    "src/asyncEngine.h"
+)
 
  add_custom_command(TARGET ia-chess POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_directory

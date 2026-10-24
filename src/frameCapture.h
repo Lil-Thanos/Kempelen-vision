@@ -27,11 +27,10 @@ public:
 	~FrameCapture();
 
 
-	bool initialize(HWND hwnd);
+	bool        initialize(HWND hwnd);
 
-	void captureFrame();
-
-	void findBoard();
+	void        captureFrame();
+	void        findBoard();
 
 
 	std::optional<cv::Rect>  detectBoard(const cv::Mat& bgr);
